@@ -93,18 +93,18 @@ if (window.location.pathname === '/attendance') {
   floatingButton.innerHTML = `
     <button id="ft-dashboard-btn" style="
       position: fixed;
-      top: 20px;
-      right: 20px;
+      top: 7px;
+      right: 7px;
       z-index: 9999;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      background: white;
+      color: black;
       border: none;
       padding: 12px 20px;
-      border-radius: 25px;
+      border-radius: 10px;
       font-size: 14px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     ">
