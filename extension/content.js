@@ -15,7 +15,7 @@ async function getSessionCookie() {
 // Function to send session to your dashboard
 async function sendSessionToCustomDashboard(sessionCookie) {
   try {
-    const dashboardUrl = 'http://localhost:3000'; // Change this to your deployed URL
+    const dashboardUrl = 'https://ft-dash-4yp3vm1tz-cremedekiwis-projects.vercel.app/'; // Change this to your deployed URL
     
     // First, try to send the session cookie
     const response = await fetch(`${dashboardUrl}/api/extension-login`, {
