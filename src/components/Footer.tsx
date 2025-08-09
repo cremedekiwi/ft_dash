@@ -16,7 +16,7 @@ export function Footer() {
               >
                 <span>GitHub</span>
               </Link>
-              <span className="text-yellow-500 animate-pulse">{" █"}</span>
+              <span className="text-white animate-pulse">{" █"}</span>
             </span>
           </div>
 

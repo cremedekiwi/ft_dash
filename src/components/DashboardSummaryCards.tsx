@@ -142,22 +142,22 @@ export function DashboardSummaryCards({
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 animate-fade-in-up">
-      {/* Remaining Hours Card - Red */}
+      {/* Remaining Hours Card */}
       <Card className="card-modern glass-hover group overflow-hidden">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
           <CardTitle>
             Remaining Hours
           </CardTitle>
-          <div className="p-2 rounded-lg bg-red-500/10 group-hover:bg-red-500/20 transition-colors duration-300">
-            <Target className="h-4 w-4 text-red-500" />
+          <div className="p-2 rounded-lg bg-orange-400/10 group-hover:bg-orange-400/20 transition-colors duration-300">
+            <Target className="h-4 w-4 text-orange-400" />
           </div>
         </CardHeader>
         <CardContent className="relative z-10">
           <div className="flex items-baseline space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold bg-gradient-to-r bg-orange-400 bg-clip-text text-transparent">
               {formatHours(Math.round(remainingHours * 60))}
             </div>
-            <div className="text-xs mt-1 text-red-500">
+            <div className="text-xs mt-1 text-orange-400">
               {remainingWorkDays > 0 ? formatHours(Math.round(remainingHours * 60 / remainingWorkDays)) : '0m'} per workday
             </div>
           </div>
@@ -168,12 +168,12 @@ export function DashboardSummaryCards({
           {/* Remaining Hours Progress Bar */}
           <div className="mt-3 space-y-2">
             <div className="flex justify-between text-xs">
-              <span className="text-red-500">Workdays Left</span>
-              <span className="text-red-500">{remainingWorkDays} {remainingWorkDays === 1 ? 'workday' : 'workdays'}</span>
+              <span className="text-orange-400">Workdays Left</span>
+              <span className="text-orange-400">{remainingWorkDays} {remainingWorkDays === 1 ? 'workday' : 'workdays'}</span>
             </div>
             <div className="w-full bg-muted/50 rounded-full h-2">
               <div
-                className="bg-gradient-to-r from-red-500 to-red-600 h-2 rounded-full transition-all duration-500"
+                className="bg-gradient-to-r bg-orange-400 h-2 rounded-full transition-all duration-500"
                 style={{ width: `${Math.min(getTotalWorkDays() > 0 ? (remainingWorkDays / getTotalWorkDays()) * 100 : 0, 100)}%` }}
               ></div>
             </div>
@@ -181,22 +181,22 @@ export function DashboardSummaryCards({
         </CardContent>
       </Card>
 
-      {/* Total Hours Card - Green */}
+      {/* Total Hours Card */}
       <Card className="card-modern glass-hover group overflow-hidden">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
           <CardTitle>
             Total Hours
           </CardTitle>
-          <div className="p-2 rounded-lg bg-green-500/10 group-hover:bg-green-500/20 transition-colors duration-300">
-            <Clock className="h-4 w-4 text-green-500" />
+          <div className="p-2 rounded-lg bg-orange-500/10 group-hover:bg-orange-500/20 transition-colors duration-300">
+            <Clock className="h-4 w-4 text-orange-500" />
           </div>
         </CardHeader>
         <CardContent className="relative z-10">
           <div className="flex items-baseline space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold bg-gradient-to-r bg-orange-500 bg-clip-text text-transparent">
               {formatHours(effectiveTotalMinutes)}
             </div>
-            <div className="text-xs mt-1 text-green-500">
+            <div className="text-xs mt-1 text-orange-500">
               {((totalHours / 140) * 100).toFixed(0)}% of 140 hours
             </div>
           </div>
@@ -207,8 +207,8 @@ export function DashboardSummaryCards({
           {/* Combined Progress Bar */}
           <div className="mt-3 space-y-2">
             <div className="flex justify-between text-xs">
-              <span className="text-green-500">Work Hours</span>
-              <span className="text-purple-500">Holiday Hours</span>
+              <span className="text-orange-500">Work Hours</span>
+              <span className="text-orange-500">Holiday Hours</span>
             </div>
                         <div className="w-full bg-muted/50 rounded-full h-2 flex overflow-hidden">
               {(() => {
@@ -222,12 +222,12 @@ export function DashboardSummaryCards({
                   <>
                     {/* Work Hours (Green) */}
                     <div
-                      className="bg-gradient-to-r from-green-500 to-green-600 h-2 transition-all duration-500"
+                      className="bg-gradient-to-r bg-orange-500 h-2 transition-all duration-500"
                       style={{ width: `${workPercent}%` }}
                     ></div>
                     {/* Holiday Hours (Purple) */}
                     <div
-                      className="bg-gradient-to-r from-purple-500 to-purple-600 h-2 transition-all duration-500"
+                      className="bg-gradient-to-r bg-orange-500 h-2 transition-all duration-500"
                       style={{ width: `${holidayPercent}%` }}
                     ></div>
                   </>
@@ -238,14 +238,14 @@ export function DashboardSummaryCards({
         </CardContent>
       </Card>
 
-      {/* Holiday Days Card - Purple */}
+      {/* Holiday Days Card */}
       <Card className="card-modern glass-hover group overflow-hidden">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
           <CardTitle>
             Holidays
           </CardTitle>
-          <div className="p-2 rounded-lg bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors duration-300">
-            <Calendar className="h-4 w-4 text-purple-500" />
+          <div className="p-2 rounded-lg bg-orange-600/10 group-hover:bg-orange-600/20 transition-colors duration-300">
+            <Calendar className="h-4 w-4 text-orange-600" />
           </div>
         </CardHeader>
         <CardContent className="relative z-10">
@@ -289,10 +289,10 @@ export function DashboardSummaryCards({
               {/* Days Section */}
               <div className="flex items-center justify-between m-0">
                 <div className="flex items-baseline space-x-2">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">
+                  <div className="text-2xl font-bold bg-gradient-to-r bg-orange-600 bg-clip-text text-transparent">
                     {holidayDays} day{holidayDays === 1 ? "" : "s"}
                   </div>
-                  <div className="text-xs mt-1 text-purple-500">
+                  <div className="text-xs mt-1 text-orange-600">
                     {formatHours(holidayMinutes)}
                   </div>
                 </div>
@@ -313,12 +313,12 @@ export function DashboardSummaryCards({
               {/* Holiday Allowance Progress Bar */}
               <div className="mt-3 space-y-2">
                 <div className="flex justify-between text-xs">
-                  <span className="text-purple-500">Annual Allowance</span>
-                  <span className="text-purple-500">{holidayDays}/35 days</span>
+                  <span className="text-orange-600">Annual Allowance</span>
+                  <span className="text-orange-600">{holidayDays}/35 days</span>
                 </div>
                 <div className="w-full bg-muted/50 rounded-full h-2">
                   <div
-                    className="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full transition-all duration-500"
+                    className="bg-gradient-to-r bg-orange-600 h-2 rounded-full transition-all duration-500"
                     style={{ width: `${Math.min((holidayDays / 35) * 100, 100)}%` }}
                   ></div>
                 </div>
