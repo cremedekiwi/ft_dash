@@ -48,7 +48,7 @@ async function sendSessionToCustomDashboard(sessionCookie) {
     // Store session cookie for auto-fill and open dashboard with URL parameter
     const browserAPI = typeof browser !== 'undefined' ? browser : chrome;
     browserAPI.storage.local.set({ pendingSessionCookie: sessionCookie }, () => {
-      const dashboardUrl = 'http://localhost:3000';
+      const dashboardUrl = 'https://ft-dash-ochre.vercel.app';
       // Pass session in URL hash for immediate access
       window.open(`${dashboardUrl}/login#session=${encodeURIComponent(sessionCookie)}`, '_blank');
     });

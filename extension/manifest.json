@@ -8,7 +8,8 @@
     "activeTab",
     "storage",
     "https://dashboard.42paris.fr/*",
-    "http://localhost:*/*"
+    "http://localhost:*/*",
+    "https://ft-dash-ochre.vercel.app/*"
   ],
   "content_scripts": [
     {
@@ -16,7 +17,7 @@
       "js": ["content.js"]
     },
     {
-      "matches": ["http://localhost:3000/*"],
+      "matches": ["http://localhost:3000/*", "https://ft-dash-ochre.vercel.app/*"],
       "js": ["dashboard-content.js"]
     }
   ],
