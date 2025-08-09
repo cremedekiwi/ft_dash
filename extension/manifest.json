@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "42 Dashboard Session Helper",
+  "version": "1.0",
+  "description": "Automatically extract session cookie from 42 dashboard for your custom dashboard",
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "storage",
+    "https://dashboard.42paris.fr/*",
+    "http://localhost:*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://dashboard.42paris.fr/*"],
+      "js": ["content.js"]
+    },
+    {
+      "matches": ["http://localhost:3000/*"],
+      "js": ["dashboard-content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "42 Dashboard Session Helper"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}

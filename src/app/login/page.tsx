@@ -82,6 +82,22 @@ export default function LoginPage() {
 
   useEffect(() => {
     setBrowserInfo(getBrowserInstructions());
+    
+    // Check for session cookie in URL hash (from extension)
+    const hash = window.location.hash;
+    if (hash.includes('session=')) {
+      const sessionFromUrl = decodeURIComponent(hash.split('session=')[1]);
+      if (sessionFromUrl) {
+        setSessionCookie(sessionFromUrl);
+        // Auto-submit after a short delay
+        setTimeout(() => {
+          const form = document.querySelector('form');
+          if (form) {
+            form.requestSubmit();
+          }
+        }, 1000);
+      }
+    }
   }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
